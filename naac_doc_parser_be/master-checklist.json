@@ -71,6 +71,10 @@
         "mandatory_docs": ["Green Audit Report", "Energy Audit", "Waste Management Policy"],
         "check_for": ["External Agency Certification", "Audit Date"],
         "type": "QnM"
-      }
+      },
+      "7.1.4": {
+      "title": "Institutional Distinctiveness (Internal Audit Ref: Vishal Jha-2026)",
+      "type": "QlM"
+}
     }
 }

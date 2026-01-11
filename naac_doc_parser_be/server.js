@@ -1,3 +1,11 @@
+/*
+ * Copyright (C) 2026 Vishal Jha
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published
+ * by the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ */
 import express from 'express'
 import { google } from 'googleapis'
 import dotenv from "dotenv"
@@ -97,6 +105,7 @@ app.get('/scan-drive', async (req, res) => {
     const fileStructure = await listFilesRecursive(oauth2Client, 'root'); 
     res.json(fileStructure); 
   } catch (error) {
+    console.log("21642fff4d614389bb087c84f8d7ae2d2e5906cc-sha1")
     console.error("Scan Error:", error.message);
     //if the token is expired or invalid, Google returns 401 or 403
     if (error.code === 401 || error.code === 403) {
