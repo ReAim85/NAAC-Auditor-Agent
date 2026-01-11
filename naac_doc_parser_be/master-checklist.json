@@ -1,0 +1,76 @@
+{
+    "Criterion_1_Curricular_Aspects": {
+      "1.1.1_Curriculum_Delivery": {
+        "mandatory_docs": ["Academic Calendar", "Lesson Plans", "Course Completion Reports"],
+        "check_for": ["Principal Signature", "Department Seal", "Dates matching Academic Year"],
+        "type": "QlM"
+      },
+      "1.4.1_Feedback_System": {
+        "mandatory_docs": ["Student Feedback", "Teacher Feedback", "Employer Feedback", "Alumni Feedback"],
+        "check_for": ["Action Taken Report (ATR)", "Website Link to Feedback"],
+        "type": "QnM"
+      }
+    },
+    "Criterion_2_Teaching_Learning_Evaluation": {
+      "2.1.2_Reserved_Seats": {
+        "mandatory_docs": ["State Govt Admission Policy", "Category-wise Enrollment List"],
+        "check_for": ["SC/ST/OBC Breakdown", "Official Gazetted Letter"],
+        "type": "QnM"
+      },
+      "2.4.2_Faculty_Quality": {
+        "mandatory_docs": ["PhD Certificates", "Experience Letters"],
+        "check_for": ["Matching names with Faculty List", "Issue dates of PhD"],
+        "type": "QnM"
+      }
+    },
+    "Criterion_3_Research_Innovation_Extension": {
+      "3.4.3_Publications": {
+        "mandatory_docs": ["Journal Cover Page", "UGC-CARE/Scopus Link", "Article First Page"],
+        "check_for": ["ISSN/ISBN Number", "Affiliation to Institution"],
+        "type": "QnM"
+      },
+      "3.7.1_Collaborations": {
+        "mandatory_docs": ["MoUs", "Collaboration Letters", "Activity Reports under MoU"],
+        "check_for": ["Validity Dates", "Signatures of both parties", "Evidence of actual exchange/activity"],
+        "type": "QnM"
+      }
+    },
+    "Criterion_4_Infrastructure_Resources": {
+      "4.1.1_Physical_Facilities": {
+        "mandatory_docs": ["Geo-tagged Photos", "Stock Register Entries"],
+        "check_for": ["Latitude/Longitude in Metadata", "Captions on Photos"],
+        "type": "QlM"
+      },
+      "4.2.2_Library_Resources": {
+        "mandatory_docs": ["Subscription Invoices", "E-resource usage logs"],
+        "check_for": ["Current Year Invoices", "Name of Institution on Bill"],
+        "type": "QnM"
+      }
+    },
+    "Criterion_5_Student_Support_Progression": {
+      "5.1.1_Scholarships": {
+        "mandatory_docs": ["Sanction Letters", "Student List with Signatures"],
+        "check_for": ["Total Amount Matching Audit", "Govt vs Non-Govt split"],
+        "type": "QnM"
+      },
+      "5.2.1_Placements": {
+        "mandatory_docs": ["Offer Letters", "Salary Slips/Appointment Orders"],
+        "check_for": ["Company Seal", "Student Name", "Annual CTC"],
+        "type": "QnM"
+      }
+    },
+    "Criterion_6_Governance_Leadership": {
+      "6.3.3_Professional_Development": {
+        "mandatory_docs": ["FDP Certificates", "Swayam/NPTEL Certificates"],
+        "check_for": ["Duration (min 5 days)", "Year of Completion"],
+        "type": "QnM"
+      }
+    },
+    "Criterion_7_Values_Best_Practices": {
+      "7.1.3_Environment_Audit": {
+        "mandatory_docs": ["Green Audit Report", "Energy Audit", "Waste Management Policy"],
+        "check_for": ["External Agency Certification", "Audit Date"],
+        "type": "QnM"
+      }
+    }
+}
