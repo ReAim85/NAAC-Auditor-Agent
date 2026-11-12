@@ -8,7 +8,7 @@
  */
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Folder, FileText, ChevronRight, ChevronDown } from 'lucide-react';
+import { Folder, FileText, ChevronRight, ChevronDown, Loader2 } from 'lucide-react';
 
 //recursive function to render the folder structure tree
 const FileNode = ({ node, onSelect }: any) => {
@@ -16,9 +16,9 @@ const FileNode = ({ node, onSelect }: any) => {
   const isFolder = node.children && node.children.length > 0;
 
   return (
-    <div className="pl-4">
-      <div 
-        className="flex items-center gap-2 py-1 cursor-pointer hover:bg-gray-100 rounded px-2 text-gray-700 transition-colors"
+    <div className="pl-3">
+      <div
+        className="flex items-center gap-2 py-1.5 cursor-pointer hover:bg-amber-50 rounded-lg px-2.5 text-stone-700 transition-all group"
         onClick={(e) => {
           e.stopPropagation();
           if (isFolder) setIsOpen(!isOpen);
@@ -26,11 +26,11 @@ const FileNode = ({ node, onSelect }: any) => {
         }}
       >
         {isFolder && (
-          <span className="text-gray-400">
+          <span className="text-stone-400 group-hover:text-amber-500 transition-colors">
             {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
           </span>
         )}
-        {isFolder ? <Folder size={16} className="text-blue-500" /> : <FileText size={16} className="text-gray-500" />}
+        {isFolder ? <Folder size={16} className="text-amber-500" /> : <FileText size={16} className="text-stone-400 group-hover:text-stone-600" />}
         <span className="text-sm truncate font-medium">{node.name}</span>
       </div>
 
@@ -40,7 +40,7 @@ const FileNode = ({ node, onSelect }: any) => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="overflow-hidden border-l border-gray-200 ml-2"
+            className="overflow-hidden border-l border-stone-200 ml-3"
           >
             {node.children.map((child : any) => (
               <FileNode key={child.id} node={child} onSelect={onSelect} />
@@ -53,14 +53,19 @@ const FileNode = ({ node, onSelect }: any) => {
 };
 
 export default function DriveExplorer({ data, onFileSelect }: any) {
-  if (!data) return <div className="p-4 text-gray-400">Loading Drive...</div>;
+  if (!data) return (
+    <div className="h-full flex items-center justify-center text-stone-400">
+      <Loader2 className="animate-spin mr-2" size={18} />
+      Loading Drive...
+    </div>
+  );
 
   return (
-    <div className="w-full bg-white shadow-sm rounded-xl p-4 h-full overflow-y-auto">
-      <h2 className="text-lg font-bold mb-4 text-gray-800 flex items-center gap-2">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" className="w-6 h-6" alt="Drive" />
-        NAAC Drive
-      </h2>
+    <div className="w-full bg-white border border-stone-200 rounded-2xl p-5 h-full overflow-y-auto">
+      <div className="flex items-center gap-3 mb-5 pb-4 border-b border-stone-100">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Google_Drive_icon_%282020%29.svg" className="w-5 h-5" alt="Drive" />
+        <h2 className="text-xs font-bold text-stone-500 uppercase tracking-widest">Document Explorer</h2>
+      </div>
       {data.map((node: any) => (
         <FileNode key={node.id} node={node} onSelect={onFileSelect} />
       ))}

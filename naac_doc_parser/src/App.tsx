@@ -77,27 +77,36 @@ function App() {
   };
 
   return (
-    <div className="h-screen w-full flex p-4 gap-4 overflow-hidden bg-gray-50">
-      {/* Sidebar (Left) used gemini for minimal UI*/}
-      <div className="w-1/3 h-full flex flex-col">
-        <DriveExplorer 
-          data={fileStructure} 
-          onFileSelect={(file: any) => {
-            setSelectedFile(file);
-            setAuditReport(null);
-          }} 
-        />
+    <div className="h-screen w-full flex flex-col overflow-hidden bg-stone-50">
+      {/* Header */}
+      <div className="px-6 py-4 border-b border-stone-200 bg-white flex items-center gap-3">
+        <div className="w-2 h-8 bg-amber-500 rounded-full"></div>
+        <h1 className="font-serif-display text-2xl text-stone-900 tracking-tight">NAAC Auditor</h1>
+        <span className="text-xs font-semibold text-stone-400 uppercase tracking-widest ml-2">Compliance Engine</span>
       </div>
 
-      {/* Main Panel (Right) */}
-      <div className="w-2/3 h-full">
-        <AuditPanel 
-          selectedFile={selectedFile}
-          //@ts-ignore
-          auditReport={auditReport}
-          loading={loading}
-          onAudit={handleAudit} 
-        />
+      <div className="flex flex-1 p-5 gap-5 overflow-hidden">
+        {/* Sidebar (Left) */}
+        <div className="w-1/3 h-full flex flex-col">
+          <DriveExplorer
+            data={fileStructure}
+            onFileSelect={(file: any) => {
+              setSelectedFile(file);
+              setAuditReport(null);
+            }}
+          />
+        </div>
+
+        {/* Main Panel (Right) */}
+        <div className="w-2/3 h-full">
+          <AuditPanel
+            selectedFile={selectedFile}
+            //@ts-ignore
+            auditReport={auditReport}
+            loading={loading}
+            onAudit={handleAudit}
+          />
+        </div>
       </div>
     </div>
   );
