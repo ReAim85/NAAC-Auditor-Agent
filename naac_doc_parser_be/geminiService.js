@@ -61,7 +61,7 @@ export async function processAndAuditFile(driveService, fileId, fileName, mimeTy
     //wait for file to be processed (important for large PDFs). gemini recommends.
     //the "audit", sending the file and rules to gemini
     console.log(`Asking Gemini to verify rules...`);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });    
+    const model = genAI.getGenerativeModel({ model: "gemini-3.5-flash-lite" });    
     const prompt = `
       You are a strict NAAC Accreditation Auditor. 
       I have uploaded a document titled "${fileName}".
